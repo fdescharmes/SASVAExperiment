@@ -309,10 +309,6 @@ limitations under the License.
 		}
 
 
-		_data = messageFromVA.data;
-		// Numeric values can be assigned to the tooltip, so we should format the data
-		_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
-		updateChart();
 			
 		var json = syntaxHighlight(_resultData);
 		document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
