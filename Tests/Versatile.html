@@ -44,7 +44,7 @@ limitations under the License.
 	html, body, #chart {
 		margin: 0px;
 		padding: 0px;
-		height: 50%;
+		height: 100%;
 		width: 100%;
 	}
 		
@@ -83,7 +83,7 @@ limitations under the License.
 	html, body, #ddc_chart {
 		margin: 0px;
 		padding: 0px;
-		height: 50%;
+		height: 100%;
 		width: 100%;
 	}
 		
@@ -313,6 +313,7 @@ limitations under the License.
 		if (_resultData.columns[0].label == 'Barres') {
 			// Numeric values can be assigned to the tooltip, so we should format the data
 			_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
+			initChart();
 			updateChart();
 		} else {
 			var json = syntaxHighlight(_resultData);
@@ -363,8 +364,6 @@ limitations under the License.
 
 	
 	va.messagingUtil.setOnDataReceivedCallback(onDataReceived);
-	initChart();
-	updateChart();
 
 </script>
 </body>
