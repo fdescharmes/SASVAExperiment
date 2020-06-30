@@ -106,7 +106,7 @@ limitations under the License.
 <div id="ddc_chart"></div>
 
 <script>
-
+ 
 	var _resultData = null;
 	var _resultName = null;
 	var _selections = null;
@@ -314,7 +314,7 @@ limitations under the License.
 		_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
 		updateChart();
 			
-		var json = syntaxHighlight(_sampleData);
+		var json = syntaxHighlight(_resultData);
 		document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
 
 			
