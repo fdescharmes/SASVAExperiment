@@ -127,8 +127,6 @@ limitations under the License.
 	var _xScale, _yScale, _xAxisComponent, _yAxisComponent;
 
 	var _svg = d3.select("#chart").append("svg")
-		.style("width", "100%")
-		.style("height", "100%")
 		.on("click", function(d,i){deselectAllBars(d, i);});
 		
 	var _chart = _svg.append("g")
