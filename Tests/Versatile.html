@@ -41,24 +41,6 @@ limitations under the License.
 		overflow: hidden;
 	}
 
-	html, body, #ddc_chart {
-		margin: 0px;
-		padding: 0px;
-	}
-		
-	#ddc_chart {
-	position: relative;
-		border-style: none;
-		border-width: 0px;
-
-	
-	pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
-	.string { color: green; }
-	.number { color: blue; }
-	.boolean { color: darkorange; }
-	.null { color: magenta; }
-	.key { color: red; }
-}
 
 	html, body, #chart {
 		margin: 0px;
@@ -100,7 +82,6 @@ limitations under the License.
 
 </style>
 
-<div id="ddc_chart"></div>
 <div id="chart"></div>
 
 <script>
@@ -314,8 +295,6 @@ limitations under the License.
 			initChart();
 			updateChart();
 		} else {
-			var json = syntaxHighlight(_resultData);
-			document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
 		};
 			
         }
