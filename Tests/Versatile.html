@@ -119,10 +119,10 @@ limitations under the License.
 	var _sampleFormatter = {};
 	_sampleFormatter[_sampleColLabels[2]] = function(d) { return "$" + d3.format(",.")(d); };
 	var _sampleData = [
-		['Bar','China', 9181204],
-		['Bar','US', 16768100],
-		['Bar','Japan', 4898532],
-		['Bar','Germany', 3730261]];
+		['Barres','China', 9181204],
+		['Barres','US', 16768100],
+		['Barres','Japan', 4898532],
+		['Barres','Germany', 3730261]];
 		
 	var _margin = {top: 40, right: 20, bottom: 60, left: 80},
 		_width = window.innerWidth - _margin.left - _margin.right,
@@ -310,13 +310,14 @@ limitations under the License.
 
 
 		_data = messageFromVA.data;
-		// Numeric values can be assigned to the tooltip, so we should format the data
-		_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
-		updateChart();
-			
-		var json = syntaxHighlight(_resultData);
-		document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
-
+		if (_data[0][0] == 'Barres') {
+			// Numeric values can be assigned to the tooltip, so we should format the data
+			_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
+			updateChart();
+		} else {
+			var json = syntaxHighlight(_resultData);
+			document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
+		};
 			
         }
 
