@@ -115,7 +115,7 @@ limitations under the License.
 	var _chart = null;
 
 	// This sample data is used to render the chart even if roles haven't been assigned to the Data-Driven Content object yet
-	var _sampleColLabels = ["Type","Country", "GDP"];
+	var _sampleColLabels = ["Barres","Country", "GDP"];
 	var _sampleFormatter = {};
 	_sampleFormatter[_sampleColLabels[2]] = function(d) { return "$" + d3.format(",.")(d); };
 	var _sampleData = [
@@ -310,7 +310,7 @@ limitations under the License.
 
 
 		_data = messageFromVA.data;
-		if (_data[0][0] == 'Barres') {
+		if (_resultData.columns[0].label == 'Barres') {
 			// Numeric values can be assigned to the tooltip, so we should format the data
 			_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
 			updateChart();
