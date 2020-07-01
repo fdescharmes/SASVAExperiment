@@ -271,9 +271,6 @@ limitations under the License.
 	var _sampleFormatter = {};
 	_sampleFormatter[_sampleColLabels[2]] = function(d) { return "$" + d3.format(",.")(d); };
 	var _sampleData = [
-		['Barres','China', 9181204],
-		['Barres','US', 16768100],
-		['Barres','Japan', 4898532],
 		['Barres','Germany', 3730261]];
 		
 	var _margin = {top: 40, right: 20, bottom: 60, left: 80},
@@ -309,26 +306,14 @@ limitations under the License.
     rowCount: 18,
     availableRowCount: 18,
     data: [
-      ["Hybrid", "Cylinders", 3.6666666666666665, "BEST12.2"],
-      ["Hybrid", "MPG (City)", 55, "BEST12.2"],
-      ["Hybrid", "MSRP", 19920, "DOLLAR12.2"],
-      ["Sedan", "Cylinders", 5.580152671755725, "BEST12.2"],
-      ["Sedan", "MPG (City)", 21.083969465648856, "BEST12.2"],
-      ["Sedan", "MSRP", 29773.618320610687, "DOLLAR12.2"],
-      ["Sports", "Cylinders", 6.340425531914893, "BEST12.2"],
-      ["Sports", "MPG (City)", 18.408163265306122, "BEST12.2"],
-      ["Sports", "MSRP", 53387.06122448979, "DOLLAR12.2"],
-      ["SUV", "Cylinders", 6.566666666666666, "BEST12.2"],
-      ["SUV", "MPG (City)", 16.1, "BEST12.2"],
-      ["SUV", "MSRP", 34790.25, "DOLLAR12.2"],
-      ["Truck", "Cylinders", 6.25, "BEST12.2"],
-      ["Truck", "MPG (City)", 16.5, "BEST12.2"],
-      ["Truck", "MSRP", 24941.375, "DOLLAR12.2"],
-      ["Wagon", "Cylinders", 5.3, "BEST12.2"],
-      ["Wagon", "MPG (City)", 21.1, "BEST12.2"],
-      ["Wagon", "MSRP", 28840.533333333333, "DOLLAR12.2"]
+      ["Radar","Wagon", "MSRP", 28840.533333333333, "DOLLAR12.2"]
     ],
     columns: [
+      {
+        name: "bi172",
+        label: "TypeAffichage",
+        type: "string"
+      },
       {
         name: "bi173",
         label: "Type",
@@ -336,11 +321,6 @@ limitations under the License.
       },
       {
         name: "bi174",
-        label: "Metric",
-        type: "string"
-      },
-      {
-        name: "bi175",
         label: "Measure",
         type: "number",
         usage: "quantitative",
@@ -351,6 +331,11 @@ limitations under the License.
           precision: 0,
           formatString: "BEST12."
         }
+      },
+      {
+        name: "bi175",
+        label: "Metric",
+        type: "string"
       },
       {
         name: "bi176",
@@ -664,15 +649,6 @@ limitations under the License.
 		_resultData = messageFromVA;
 		_resultName = messageFromVA.resultName;
 		_selections = va.contentUtil.initializeSelections(messageFromVA);
-		if (!va.contentUtil.validateRoles(messageFromVA, ["string","string","number"], null)) {
-				va.messagingUtil.postInstructionalMessage(_resultName, 
-					"D3 Bar Chart expects columns to be assigned in this order:\n" +
-					" 0. Type de représentation\n" +
-					" 1. X axis (string)\n" +
-					" 2. Y axis (number)");
-				return;
-		}
-
 
 		_data = messageFromVA.data;
 		if (_data[0][0] == "Barres") {
