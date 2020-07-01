@@ -311,7 +311,7 @@ limitations under the License.
 
 
 		_data = messageFromVA.data;
-		if (_resultData.columns[0].label == 'Barres') {
+		if (_data[0][0] == "Barres") {
 			// Numeric values can be assigned to the tooltip, so we should format the data
 			_axisFormatter = va.d3Helper.configureAxisFormatter(messageFromVA);
 			initChart();
