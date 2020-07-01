@@ -713,31 +713,6 @@ limitations under the License.
 		va.messagingUtil.postSelectionMessage(_resultName, selections);
 	}
 
-  // Take action on received data
-  function onDataReceived(messageFromVA) {
-    // Initialize data variables
-    VA_MESSAGE = messageFromVA;
-    VA_RESULT_NAME = messageFromVA.resultName;
-
-    // Validate data roles
-    if (
-      !va.contentUtil.validateRoles(
-        messageFromVA,
-        ["string", "string", "number", "string"],
-        ["number"]
-      )
-    ) {
-      va.messagingUtil.postInstructionalMessage(
-        VA_RESULT_NAME,
-        "D3 Radar Chart expects columns to be assigned in this order:\n" +
-          " 1. Category (string)\n" +
-          " 2. Metric Name (string)\n" +
-          " 3. Metric Value (number)\n" +
-          " 4. Metric Format (string)"
-      );
-      return;
-    }
-
     // Create nest to help process tall data structure
     const nestedData = d3
       .nest()
