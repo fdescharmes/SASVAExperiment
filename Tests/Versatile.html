@@ -657,14 +657,7 @@ limitations under the License.
 			initChart();
 			updateChart();
 		} else if (_data[0][0] == "Radar") {
-    if (LAST_TRANSITION_END > Date.now()) {
-      setTimeout(function() {
-        onDataReceived(messageFromVA);
-      }, LAST_TRANSITION_END - Date.now());
-      LAST_TRANSITION_END = LAST_TRANSITION_END + TRANS_TIME + TRANS_DELAY;
-    } else {
-      onDataReceived(messageFromVA);
-      LAST_TRANSITION_END = Date.now() + TRANS_TIME + TRANS_DELAY;
+
     }
 		} else {
 			var json = syntaxHighlight(_resultData);
