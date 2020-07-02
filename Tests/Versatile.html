@@ -282,7 +282,7 @@ limitations under the License.
 	var _svg = d3.select("#chart").append("svg")
 		.style("width", "100%")
 		.style("height", "100%")
-		.on("click", function(d,i){deselectAllBars(d, i);});
+		.on("click", function(d,i){deselectAllBars(d, i);}); 
 		
 	var _chart = _svg.append("g")
 	    .attr("class", "chart")
@@ -659,7 +659,7 @@ limitations under the License.
 		} else if (_data[0][0] == "Radar") {
 
     }
-		} else {
+	 else {
 			var json = syntaxHighlight(_resultData);
 			document.getElementById('ddc_chart').innerHTML = "<pre>" + json + "</pre>";
 		};
@@ -784,8 +784,8 @@ limitations under the License.
       drawElements();
     } else {
       updateElements();
-    }
-  }
+    };
+  
 
   // Draw elements for first time and on resize event
   function drawElements() {
